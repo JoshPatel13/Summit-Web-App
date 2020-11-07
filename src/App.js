@@ -198,8 +198,8 @@ componentDidMount() {
         <div className="bottomBar">
           <Button onClick={this.previousPage}>Previous</Button>
           <Button onClick={this.nextPage}>Next</Button>
-          <label>   page count : {this.state.currPage}</label>
-
+          <label>   Current Page : {this.state.currPage}</label>
+          <label>  ----- Total # of Pages : {this.state.totalPages}</label>
         </div>
       </div>
 
