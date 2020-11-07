@@ -1,4 +1,4 @@
-Try It Out Here: 
+Try It Out Here: https://c1-summit.herokuapp.com
 
 To Run Locally:
 1. Install Node.js and npm
