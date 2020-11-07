@@ -7,9 +7,6 @@ import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import { FormLabel } from '@material-ui/core';
-import { spacing } from '@material-ui/system';
-import { FilledInput } from '@material-ui/core';
 
 
 class App extends React.Component {
@@ -81,7 +78,7 @@ class App extends React.Component {
   }
 //gets the sources for the category chosen. This is important for the everything api.
   getSources() {
-    const newsapi = new NewsAPI('78b9d599c4f94f8fa3afb1a5458928d6');
+    const newsapi = new NewsAPI('78b9d599c4f94f8fa3afb1a5458928d6', { corsProxyUrl: 'https://cors-anywhere.herokuapp.com/' });
 
     let entertainmentSources = "";
     let technologySources = "";
@@ -119,7 +116,7 @@ class App extends React.Component {
   }
 //takes the sources from the getSources method and uses it to call the everything api
   getArticles(query, filter, page) {
-    const newsapi = new NewsAPI('78b9d599c4f94f8fa3afb1a5458928d6');
+    const newsapi = new NewsAPI('78b9d599c4f94f8fa3afb1a5458928d6', { corsProxyUrl: 'https://cors-anywhere.herokuapp.com/' });
     let source;
     if (filter === "Technology") {
       source = this.state.technologySources;
@@ -144,7 +141,7 @@ class App extends React.Component {
 }
 //gets top headlines for the filter chosen
   getHeadlines(query, filter, page) {
-    const newsapi = new NewsAPI('78b9d599c4f94f8fa3afb1a5458928d6');
+    const newsapi = new NewsAPI('78b9d599c4f94f8fa3afb1a5458928d6', { corsProxyUrl: 'https://cors-anywhere.herokuapp.com/' });
     let category;
     if (filter === "Technology") {
       category = "technology";
